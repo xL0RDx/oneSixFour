@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `The new title`,
+    title: `Gatsby Blog`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
     contact: {
@@ -10,6 +10,13 @@ module.exports = {
     }
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `pgk6f76x35qi`,
+        accessToken: `FbW6AyNVpAIM26opNlkGkE5ZW5poQw5j-LBnqpg02X8`
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
