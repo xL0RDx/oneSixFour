@@ -6,14 +6,25 @@ exports.createPages = ({ graphql, actions }) => {
         graphql(`
         {
             allContentfulBlogPost {
-                edges {
-                    node {
-                        id
-                        slug
+              edges {
+                node {
+                  id
+                  title
+                  slug
+                  heroImage {
+                    fluid(maxWidth: 300) {
+                      src
                     }
+                  }
+                  body {
+                    childMarkdownRemark {
+                      excerpt
+                    }
+                  }
                 }
+              } 
             }
-        }
+          }
     `).then(result => {
         if (result.errors) {
             reject(result.errors);
